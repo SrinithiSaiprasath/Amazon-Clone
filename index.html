@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon.com.Spend Less.Smile More</title>
+    <link rel="stylesheet" href="amazonclone.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"/>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="container-fluid navBar">
+      <section class="row navBarrow">
+        <div class="col-3 leftsection">
+          <img src="image1.jpg" alt="img" />
+          <div class="hello">
+            <a href="#">Hello,</a> <br />
+            <a href="#"
+              ><i class="fas fa-map-marker-alt"></i
+              ><b> Select your address</b></a
+            >
+          </div>
+        </div>
+
+        <div class="col-6 navSearchBar">
+          <div class="itemSearchBar">
+            <i class="fas fa-search"></i>
+
+            <input placeholder="      Search for items" type="search" name="" id="" />
+            <a href="#">All <i class="fas fa-angle-down"></i> </a>
+          </div>
+        </div>
+        <section class="col-3 navLast">
+          <div class="indianFlag">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAnFBMVEX/mTMSiAf/////lyr//fkAgwAAAIgAAH4AAIUAAIIAAIMAAHMAAHbk5PDg4O7w8Pfp6fP5+f2lpctHR52Njb5BQZu+vtqrq8/ExN20tNSHh7tLS5/19fp/f7djY6mZmcXOzuXW1ugmJpE5OZgNDYtsbK1YWKRRUaF5ebQZGY7R0eWYmMUyMpcgIJBhYa3Bwd8/P5smJpNycrEwMJjLpwQ3AAAEs0lEQVR4nO2ba3eiSBCGnd7dvsgdEQFBxUtMos4kk///37Yaci9PducLnXN4H48K6IfisbqradrJBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAP+Qt8ZiLAZ+CEAyccOOHACQdOON/BSZxnq/n58TxfZXnsOhjxDZwE2Z0yU62llFpPjbrLAtchOXZyf1RTK0NqpZS2G3Kqlvdug3LqJD6SB2nMz1u1jIJoqW5XxpAidXTahFw6WdvMMOYkEpFH4l5EOW2tjbFZs3YYl0MnN4bOvVmcI7Gxu6V92YjovKjIlTm6C8yZk/pC6TALE7u9+PiShDP67FK7Cs2Vk5q6U6NSUdidIqSXjJ5hv0utinJIRo5ic+WEssQsmlgkNjNq6+MnPTObG4tExM2CpFwcxebIyVFLlXdbqS0xS3qen9/jtDv+S0ntqE9x4+RkKEvEr27bnviKxOxJx+p5n5QIyhTjpvo4cRJQDqis70JESq0npZPXVJwpRRZdmtgPqfooJ2NaJ05mWs/Wtgdd2bIja9FuRaISsW1FLelIYvMlWtuvuQjPhZONekmAhAYnolyKxI9rv479RCwpa6JdV6FtOqmNg/hcOKHfv0q6qisiSXJ0KbYpOUm3IqcWFDwX4SKp3CSKAyehkqbs+xG7cy9KJZpd7Me7RqhStMqOVrp+pTSy3xkWB04qGprYnz84WisbLxf7Q+EH9CgOe5F7trksjrZxzWiQUg0foAMne6qxfetIJeVL7i02XmBaegTeZuHRoVL2Y5RobeR++ACHd0JNR75sRzPqS1KvuK2q4qmoqtvCS0Uu56+jeumiHA/vpDT6UG/Koj/vUu03uR88tWmTtk+Bn9/vVXeFLOqi3NQHbcrBIxzeSaO7PiI8LVdpSxsrrwkew+rh4aEKL2Hl2TFLmx6WWfv25WEZ3smNln5fiIPTo3duiqDZBjM7kWRmwbYJNtXOvzv15abwpb4ZPMLhnTzStd3r1EiUPihVtc1UWqZNmxm1S19nHuuj1tvBIxzeCXWbbxMjdRSHYZHOdedEz9MiDOPobTYpetchD8bwTujKzmpofh/3xvN84lKdZc8ue1J0wPOUnB2adR5SkdKDR4g84QzvZMv6k2z0/cn7unNB3el4GZ9kH8cn84f5eMcnGMdyAlzvcHBdzPmj+ZPpOOZPMM92hf+cj+3HJ2Oaj30/b7/r5+3F6Oftu/s7J5sMX93fiU/0taWL8JzeBzzZnav3AU+juw8oqMZSN/v1/eJyXPeL/8+6gnxs6wqw/uQaWKd0hfpx+uV6tun41rMRN+qrdY/DT5u84nJ9bHptfexp1OtjX9ZRT7GO+gNX19sfx7ze3oL/ZVyl///OFv/f+cbACQdOOHDCgRPO5G/wmck/4DOTH+AzcMKBEw6ccOCEAyccOOHACQdOOHDCgRMOnHDghAMnHDjhwAkHTjhwwoETDpxw4IQDJxw44cAJB044cMKBEw6ccOCEAyccOOHACQdOOHDCgRMOnHDghAMnHDjhwAkHTjhwwoETDpxw4IQDJxw44cAJB044cMKBEw6ccOCEAyccOOHACQdOOHDCgRMOnHD+BbFYJ4t2z9g0AAAAAElFTkSuQmCC"
+              alt=""
+            />
+            <i class="fas fa-angle-down"></i>
+          </div>
+          <div class="helloAccount">
+            <a href="#">Hello,Signin</a><br />
+            <a href="#"
+              ><b>Account & List</b> <i class="fas fa-angle-down"></i>
+            </a>
+          </div>
+          <div class="return">
+            <a href="#">Reutrns</a><br />
+            <a href="#"><b>&Orders</b></a>
+          </div>
+          <div class="cart">
+            <a href="#"
+              ><img
+                src="https://www.x1.com/wp-content/uploads/2018/09/Shopping-cart-icon.png"
+                alt=""
+              />
+              <b> Carts</b></a
+            >
+          </div>
+        </section>
+      </section>
+    </section>
+      
+
+    <!-- navBar Options  -->
+
+    <section class="container-fluid navOptions">
+      <a href="#"> <i class="fas fa-bars"></i> All</a>
+      <a href="#">best Sellers</a>
+      <a href="#">mobiles</a>
+      <a href="#">prime <i class="fas fa-angle-down"></i> </a>
+      <a href="#">electronics</a>
+      <a href="#">fashion</a>
+      <a href="#">new releases</a>
+      <a href="#">customer service</a>
+      <a href="#">amazon pay</a>
+      <a href="#">computers</a>
+      <a href="#">home & kitchen</a>
+      <a href="#">today's deals</a>
+    </section>
+ 
+<br>
+    <!-- amazonCarousel -->
+
+    <section class="container-fluid amazonCarousel">
+      <div class="amazonMainCarousel">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wearables/New-Launches/Boat-Extend/Boat_Xtend_TallHero_1500x600._CB665925268_.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Gateway_JWELSSH/Feb/SSW/Super_saver_brands/1500PC._CB658944950_.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/DOM/Launch/1500x600_Hero-Tall_JPN._CB667679402_.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="   https://images-eu.ssl-images-amazon.com/images/G/31/img21/OHL_HMT/HSSJUNE/HSSsbcunrec/HSS_1500x600-UNREC._CB666032735_.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="      https://images-eu.ssl-images-amazon.com/images/G/31/img20/PC/Mayactivation/Accessoriesday1/D23140543_IN_CEPC_Electronicsaccessories_underRs999_3000x12000.5x._CB669031984_.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="   https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Xiaomi/Events/June/MSD1/RedmiNote10S/D24311141_MSD_WLD_RedmiNote10S_DesktopTallHero_1500X600._CB667762214_.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="
+            https://images-eu.ssl-images-amazon.com/images/G/31/prime/Gateway/2021/desktop-1x._CB658860139_.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Griding Items -->
+    <section class="container-fluid gridcardrow">
+      <div class="upperRowCard">
+        <div class="gridCards">
+          <h4>Upgrade to bestselling smart TVs</h4>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/BAU/July/MSO/desktop/1x_DCQC_TV6._SY116_CB409720255_.jpg"
+                alt=""
+              />
+              <a href="#">Bedroom Tvs|32 inch</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/Kamya/D23607843_IN_HETV_BAU_QC_186x116_4._SY116_CB667347812_.jpg"
+                alt=""
+              />
+              <a href="#">Redmi Smart Tvs</a>
+            </div>
+          </div>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/BAU/July/MSO/desktop/1x_DCQC_TV2._SY116_CB409720252_.jpg"
+                alt=""
+              />
+              <a href="#">Premium Tvs</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/TVs/BAU/July/MSO/desktop/1x_DCQC_TV4._SY116_CB409720255_.jpg"
+                alt=""
+              />
+              <a href="#">All televisions</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gridCards">
+          <h4>Styles for Women | Up to 70% off</h4>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/1._SY116_CB656506073_.jpg"
+                alt=""
+              />
+
+              <a href="#">Womens Clothing</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/2._SY116_CB656506073_.jpg"
+                alt=""
+              />
+              <a href="#">Footwear + HandBags</a>
+            </div>
+          </div>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/3._SY116_CB656506073_.jpg"
+                alt=""
+              />
+              <a href="#">Watches</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Womens_Fashion/4._SY116_CB656506073_.jpg"
+                alt=""
+              />
+              <a href="#">Fashion jewellery</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gridCards">
+          <h4>Styles for Men | Up to 70% off</h4>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Mens_fashion/1._SY116_CB656503003_.jpg"
+                alt=""
+              />
+              <a href="#">Clothing</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Mens_fashion/2._SY116_CB656503003_.jpg"
+                alt=""
+              />
+              <a href="#">Footwear</a>
+            </div>
+          </div>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Mens_fashion/3._SY116_CB656503003_.jpg"
+                alt=""
+              />
+              <a href="#">Watches</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Gateway/Mens_fashion/4._SY116_CB656503003_.jpg"
+                alt=""
+              />
+              <a href="#">Bags & luggage</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gridCards" ">
+        <div class="row lastCardupper">
+          <h4>Sign in for your best experience</h4>
+          <a href="#">Sign in securely</a>
+        </div>
+
+        <div class="row lastCardDown">
+          <img
+            src="https://m.media-amazon.com/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Todays Deals -->
+
+    <section class="TodaysDealCarousel">
+      <h5 class="dealCar">Today’s Deals</h5>
+      <div class="itemCarousel">
+        <div class="dealcarousel">
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/31348z5DSJL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 61,900 - Rs 83,890</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41HKE1N5IqL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 990 - Rs 1,999</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/51UHoxzInpL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 61,900 - Rs 83,890</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/51JU8ZlLATL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 120.00 - Rs 3,890</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41-A+qHyyAL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 10,900 - Rs 24,890</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41Y1oURL-jL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 179.00 - Rs 3,890</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/51dJzBptMIL.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 138.00 - Rs 899.00</a>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="itemCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41yobVRav+S.__AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">Rs 128.00 - Rs 3,899.00</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESSENTIAL PRODUCTS -->
+
+    <section class="essentialProducts">
+      <h5 class="essenthead">Essential food products | Amazon Launchpad</h5>
+
+      <div class="carcontrol">
+        <div class="essentialCarousel">
+          <div class="essentialItems">
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41nSaQ7kpEL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/51B3UjhVTKL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41nhBCXKO9L._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/518I58T1eLL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/5114kQOf1bL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/31RAYuaSEbL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41dd0+SPuTL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/418FG+HoyqL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41a3QDIiL1L._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/41YtZUgeOSL._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/31-oAnRID4L._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+
+            <div class="essentialCard">
+              <img
+                src="https://m.media-amazon.com/images/I/515m1qaA05L._AC_SY200_.jpg"
+                alt=""
+              />
+              <a href="#">1,999</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADS -->
+
+    <section class="ads">
+      <img
+        src="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg"
+        alt=""
+      />
+    </section>
+
+    <section class="container-fluid bottomgrid">
+      <div class="upperRowCard">
+        <div class="gridCards">
+          <h4>Make hobbies more fun</h4>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCCC/Revised/1X/Artboard_1_QC6_1x._SY116_CB667322885_.jpg"
+                alt=""
+              />
+              <a href="#">Musical instruments</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCCC/Revised/1X/Artboard_2_QC6_1x._SY116_CB667322885_.jpg"
+                alt=""
+              />
+              <a href="#">Gardning tools</a>
+            </div>
+          </div>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCCC/Revised/1X/Artboard_3_QC6_1x._SY116_CB667322885_.jpg"
+                alt=""
+              />
+              <a href="#">Arts & Crafts</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Schoolfromhome/PCCC/Revised/1X/Artboard_4_QC6_1x._SY116_CB667322885_.jpg"
+                alt=""
+              />
+              <a href="#">Experiment and learn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gridCards">
+          <h4>COokware and dining</h4>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_1198417__1_1573567224_jpg_LOWER_QL85_._SY116_CB448746450_.jpg"
+                alt=""
+              />
+
+              <a href="#">Gas Stoves</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_1198417__2_1573567224_jpg_LOWER_QL85_._SY116_CB448746415_.jpg"
+                alt=""
+              />
+              <a href="#">Cook Ware</a>
+            </div>
+          </div>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_3_copyx400x2C5x_1573713358_jpg_LOWER_QL85_._SY116_CB448746425_.jpg"
+                alt=""
+              />
+              <a href="#">Kitchen storage</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_1198417__4_1573567224_jpg_LOWER_QL85_._SY116_CB448746450_.jpg"
+                alt=""
+              />
+              <a href="#">Table ware</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gridCards botdif">
+          <h4>School,Home essentials</h4>
+          <img
+            src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/OP/BTS/D14264916_IN_Printers_OP_GW_revamp_nov19_dashbord_Card_1x_4._SY304_CB667376048_.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="gridCards">
+          <h4>Cookware and dining</h4>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_1198417__1_1573567224_jpg_LOWER_QL85_._SY116_CB448746450_.jpg"
+                alt=""
+              />
+
+              <a href="#">Gas Stoves</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_1198417__2_1573567224_jpg_LOWER_QL85_._SY116_CB448746415_.jpg"
+                alt=""
+              />
+              <a href="#">Cook Ware</a>
+            </div>
+          </div>
+          <div class="row cardItems">
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_3_copyx400x2C5x_1573713358_jpg_LOWER_QL85_._SY116_CB448746425_.jpg"
+                alt=""
+              />
+              <a href="#">Kitchen storage</a>
+            </div>
+            <div class="col-6">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_186x116_1198417XCM_Manual_1198417__4_1573567224_jpg_LOWER_QL85_._SY116_CB448746450_.jpg"
+                alt=""
+              />
+              <a href="#">Table ware</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid ads2">
+      <img
+        src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Vernac13th/1500x150_V2_Eng._CB412582591_.jpg"
+        alt=""
+      />
+    </section>
+
+    <section class="backtotop">
+      <a href="#">Back to top</a>
+    </section>
+
+    <!-- AMZON BIO -->
+
+    <div class="amazonBio">
+      <div class="upperBio">
+        <div class="list">
+          <b><a href="#">Get to Know Us</a></b>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press Releases</a>
+          <a href="#">Amazon Cares</a>
+          <a href="#">Gift a Smile</a>
+        </div>
+
+        <div class="list">
+          <b> <a href="#">Connect with Us</a></b>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+
+        <div class="list">
+          <b><a href="#"> Make Money with Us</a></b>
+          <a href="#">Sell on Amazon</a>
+          <a href="#">Sell under Amazon Accelerator</a>
+          <a href="#">Amazon Global Selling</a>
+          <a href="#">Become an Affiliate</a>
+          <a href="#">Fulfilment by Amazon</a>
+          <a href="#">Advertise Your Products</a>
+          <a href="#">Amazon Pay on Merchants</a>
+        </div>
+
+        <div class="list">
+          <b> <a href="#"> Let Us Help You</a></b>
+          <a href="#">COVID-19 and Amazon</a>
+          <a href="#">Your Account</a>
+          <a href="#">Returns Center</a>
+          <a href="#">100% Purchase Protection</a>
+          <a href="#">Amazon App Download</a>
+          <a href="#">Amazon Assistant Downloa</a>
+          <a href="#">Help</a>
+        </div>
+      </div>
+      <hr style="background-color: white" />
+
+      <div class="topsection">
+        <div class="logamazon">
+          <img src="http://127.0.0.1:5500/logo.png" alt="" />
+
+          <a href="#"> <i class="fas fa-globe"></i> English</a>
+        </div>
+      </div>
+      <div class="lastamazon">
+        <div class="list">
+          <a href="#">Australia</a>
+          <a href="#">Braziel</a>
+          <a href="#">Canada</a>
+          <a href="#">China</a>
+          <a href="#">France</a>
+          <a href="#">Germany</a>
+          <a href="#">Italy</a>
+          <a href="#">Japan</a>
+          <a href="#">Mexico</a>
+          <a href="#">Netherlands</a>
+          <a href="#">Poland</a>
+          <a href="#">Singapore</a>
+          <a href="#">Spain</a>
+          <a href="#">Turkey</a>
+          <a href="#">United Arab Emirates</a>
+          <a href="#">United Kingdom</a>
+          <a href="#">United States</a>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
